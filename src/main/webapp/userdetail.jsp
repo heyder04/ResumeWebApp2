@@ -17,14 +17,10 @@
     <body>
        <%
 
-           if(request.getAttribute("owner")==null ){
-               response.sendRedirect("error.jsp?=msg=not found");
-               return;
-           }
         User u=(User) request.getAttribute("user");
        %>
        <div>
-        <form action="UserController" method="post">
+        <form action="userdetail" method="post">
         <input type="hidden" name="id" value="<%=u.getId()%>">
         
         <label for="name">Name:</label>
@@ -33,7 +29,7 @@
         <label for="surname">Surname:</label>
         <input type="text" name="surname" value="<%=u.getSurname()%>">
         <br>
-        <input type="submit" value="save">
+        <input name="action" type="submit" value="update">
        
         </form>
        </div>

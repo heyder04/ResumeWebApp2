@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../assets/css/users.css">
+        <link rel="stylesheet" href="assets/css/users.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -68,14 +68,22 @@
                 <td><%=u.getSurname()%></td>
                 <td><%=u.getNationality().getName()==null?"N/A":u.getNationality().getName()%></td>
                 <td>
-                    <button class="btn btn-danger" type="submit" value="delete" name="action">
+                    <form action="userdetail" method="post">
+                        <input type="hidden" name="id" value="<%=u.getId()%>">
+                        <input type="hidden" name="action" value="delete">
+                    <button class="btn btn-danger" type="submit" value="delete" >
 
                         <i class="fa-solid fa-trash"></i>
                     </button>
-                    <button class="btn btn-primary" type="submit" value="update" name="action">
+                    </form>
+                    <form action="userdetail" method="get">
+                        <input type="hidden" name="id" value="<%=u.getId()%>">
+                        <input type="hidden" name="action" value="update">
+                    <button class="btn btn-primary" type="submit" value="update" >
                         <i class="fa-solid fa-pen-to-square"></i>
 
                     </button>
+                    </form>
                 </td>
             </tr>
             <%}%>
