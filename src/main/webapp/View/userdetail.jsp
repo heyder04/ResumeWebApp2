@@ -16,9 +16,12 @@
     </head>
     <body>
        <%
-          UserDaoInter userDao=new UserDaoImpl(); 
-          User u=userDao.getById(5);
-          
+
+           if(request.getAttribute("owner")==null ){
+               response.sendRedirect("error.jsp?=msg=not found");
+               return;
+           }
+        User u=(User) request.getAttribute("user");
        %>
        <div>
         <form action="UserController" method="post">
@@ -34,5 +37,6 @@
        
         </form>
        </div>
+
     </body>
 </html>

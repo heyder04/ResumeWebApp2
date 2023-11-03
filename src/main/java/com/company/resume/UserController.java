@@ -2,13 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package com.company.resumewebapp;
+package com.company.resume;
 
 import com.company.dao.impl.UserDaoImpl;
 import com.company.entity.User;
 import com.mycompany.dao.inter.UserDaoInter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author HP
  */
-@WebServlet(name = "UserController", urlPatterns = {"/UserController"})
+@WebServlet(name = "UserController", urlPatterns = {"/userdetail"})
 public class UserController extends HttpServlet {
 UserDaoInter userDao=new UserDaoImpl();
 
@@ -42,7 +41,31 @@ response.getOutputStream().println("Succesfull");
 response.getOutputStream().close();
     }
 
+
+
     @Override
+    protected void  doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+        String userIdStr=request.getParameter("id");
+        if(userIdStr==null ||  userIdStr.trim().isEmpty()){
+            throw new IllegalArgumentException("id not specified");
+        }
+        Integer userId=Integer.parseInt(request.getParameter("id"));
+        UserDaoInter userDao=new UserDaoImpl();
+       User  u=userDao.getById(userId);
+        if(u==null){
+            throw new Exception("There is no user with this id");
+        }
+        request.setAttribute("owner",true);
+         request.setAttribute("user",u);
+        request.getRequestDispatcher("userdetail.jsp").forward(request,response);
+        }catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp?msg="+e.getMessage());
+        }}
+
+        @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>

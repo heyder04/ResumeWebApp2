@@ -4,10 +4,12 @@
 }
 
 body{font-size: 20px;
+    display: flex;
+    justify-content: center;
+
 }
 
-.btn{
-    color: #FFF;
-    background: orange;
-    font-size: 15px;
+.control-panel{
+    width: 50%;
+
 }
