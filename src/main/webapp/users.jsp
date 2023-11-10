@@ -21,17 +21,17 @@
     </head>
     <body>
        <%
-          UserDaoInter userDao=new UserDaoImpl();
-          String name =request.getParameter("name");
-          String surname =request.getParameter("surname");
-          String nationalityIdStr=request.getParameter("nid");
-           Integer nationalityId=null;
-          if(nationalityIdStr!=null && !nationalityIdStr.trim().isEmpty()) {
-             nationalityId =Integer.parseInt(nationalityIdStr);
-
-          }
-
-          List<User> list=userDao.getAll(name,surname,nationalityId);
+//          UserDaoInter userDao=new UserDaoImpl();
+//          String name =request.getParameter("name");
+//          String surname =request.getParameter("surname");
+//          String nationalityIdStr=request.getParameter("nid");
+//           Integer nationalityId=null;
+//          if(nationalityIdStr!=null && !nationalityIdStr.trim().isEmpty()) {
+//             nationalityId =Integer.parseInt(nationalityIdStr);
+//
+//          }
+//
+          List<User> list=(List<User>)  request.getAttribute("list");
 
        %>
        <div class="container " >
