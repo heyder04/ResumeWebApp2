@@ -82,7 +82,7 @@
                     </button>
                  </td><td>
                     <form action="userdetail" method="get">
-                        <input type="hidden" name="id"  value="<%=u.getId()%>">
+                        <input type="hidden" name="id"   value="<%=u.getId()%>">
                         <input type="hidden" name="action" value="update">
                     <button class="btn btn-primary" type="submit" value="update" >
                         <i class="fa-solid fa-pen-to-square"></i>
