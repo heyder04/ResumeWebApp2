@@ -76,7 +76,7 @@
 
                         <input type="hidden" name="id" value="<%=u.getId()%>">
                         <input type="hidden" name="action" value="delete">
-                    <button onclick="getId('<%=u.getId()%>')" class="btn btn-danger" type="submit" value="delete"  data-toggle="modal" data-target="#exampleModal">
+                    <button onclick="getId('<%=u.getId()%>')" class="btn  btn-danger" type="submit" value="delete"  data-toggle="modal" data-target="#exampleModal">
 
                         <i class="fa-solid fa-trash"></i>
                     </button>
