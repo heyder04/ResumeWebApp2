@@ -35,6 +35,7 @@ UserDaoInter userDao=new UserDaoImpl();
       user.setName(name);
       user.setSurname(surname);
       userDao.updateUser(user);
+      request.getSession().setAttribute("loggedInUser",user);
       response.sendRedirect("users");}
         else if (action.equals("delete")){
     userDao.removeUser(id);

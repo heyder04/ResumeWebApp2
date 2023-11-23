@@ -21,8 +21,10 @@
        %>
        <div>
         <form action="userdetail" method="post">
+
+        <input type="hidden" name="action" value="update">
         <input type="hidden" name="id" value="<%=u.getId()%>">
-        
+
         <label for="name">Name:</label>
         <input type="text" name="name" value="<%=u.getName()%>">
         <br>
