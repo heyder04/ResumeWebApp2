@@ -4,12 +4,22 @@
 }
 
 body{font-size: 20px;
-    display: flex;
-    justify-content: center;
 
 }
 
 .control-panel{
     width: 50%;
 
+}
+.login-background{
+    background: url("https://www.hr.com/portals/hrcom/Page/images/Cover-photos/HRcom -HomeSplash.jpg");
+}
+.login_fix{
+    background: #fffdfd40;
+    border: white;
+    padding-top: 17px;
+    font-style: italic;
+    /*color: aliceblue;*/
+    width: 500px;
+    height: 500px;
 }

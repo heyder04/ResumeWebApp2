@@ -25,19 +25,12 @@
     </head>
     <body>
        <%
-//          UserDaoInter userDao=new UserDaoImpl();
-//          String name =request.getParameter("name");
-//          String surname =request.getParameter("surname");
-//          String nationalityIdStr=request.getParameter("nid");
-//           Integer nationalityId=null;
-//          if(nationalityIdStr!=null && !nationalityIdStr.trim().isEmpty()) {
-//             nationalityId =Integer.parseInt(nationalityIdStr);
-//
-//          }
-//
-          List<User> list=(List<User>)  request.getAttribute("list");
 
+
+          List<User> list=(List<User>)  request.getAttribute("list");
+        User user=(User) session.getAttribute("loggedInUser");
        %>
+       <%="Welcome,"+user.getName()%>
        <div class="container " >
        <div  class="col-4">
         <form class="form-group" action="users.jsp" value="GET">
