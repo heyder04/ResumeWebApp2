@@ -4,4 +4,20 @@
     <persistence-unit name="my_persistence_unit">
         
     </persistence-unit>
+    <persistence-unit name="resumeappPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.company.entity.EmploymentHistory</class>
+        <class>com.company.entity.Country</class>
+        <class>com.company.entity.UserSkill</class>
+        <class>com.company.entity.Skill</class>
+        <class>com.company.entity.User</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/resume?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
 </persistence>

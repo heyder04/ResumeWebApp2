@@ -1,7 +1,5 @@
 package com.company.resume.util;
 
-import com.sun.deploy.net.HttpRequest;
-import com.sun.deploy.net.HttpResponse;
 
 import javax.servlet.http.HttpServletResponse;
 

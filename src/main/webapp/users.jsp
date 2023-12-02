@@ -33,7 +33,7 @@
        <%="Welcome,"+user.getName()%>
        <div class="container " >
        <div  class="col-4">
-        <form class="form-group" action="users.jsp" value="GET">
+        <form class="form-group" action="users" value="GET">
 
         <label for="name">Name:</label>
         <input class="form-control" type="text" name="name" value="">
